@@ -48,13 +48,13 @@ fn random_lights(range: u32, line: String) {
 	
 	for c in string.chars() {
 		if c == 'x' {
-			print!("{}", c.to_string().on_bright_yellow())
+			print!("{}", " ".on_bright_yellow())
 		} else if c == 'u' {
-			print!("{}", c.to_string().on_red())
+			print!("{}", " ".on_red())
 		} else if c == '.' {
-			print!("{}", c.to_string().on_blue())
+			print!("{}", " ".on_blue())
 		} else {
-			print!("{}", c.to_string().on_green())
+			print!("{}", " ".on_green())
 		}
 	}
 	println!()
