@@ -32,7 +32,7 @@ fn tannenbaum(x: u32) {
 	}
 	
 	for _stem in 0..(x-1) { print!(" "); }
-	println!("{}", "   ".on_blue());
+	println!("{}", "   ".on_green());
 }
 
 fn random_lights(range: u32, line: String) {
@@ -45,13 +45,17 @@ fn random_lights(range: u32, line: String) {
 	string.replace_range(index_2..index_2+1, "u");
 	
 	for c in string.chars() {
-		// if c == 'x' {
-		// 	print!("{}", c.to_string().on_white())
-		// 	// print!("{c}")
-		// } else if c == 'u' {
-		// 	print!("{}", c.to_string().on_bright_blue())
-		// }
-		print!("{c}");
+		if c == 'x' {
+			print!("{}", c.to_string().on_white())
+			// print!("{c}")
+		} else if c == 'u' {
+			print!("{}", c.to_string().on_red())
+		} else if c == '.' {
+			print!("{}", c.to_string().on_blue())
+		} else {
+			print!("{}", c.to_string().on_green())
+		}
+		// print!("{c}");
 	}
 	println!()
 }
