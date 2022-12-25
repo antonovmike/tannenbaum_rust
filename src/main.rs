@@ -12,11 +12,17 @@ fn tannenbaum(x: u32) {
 	// let mut line = "".to_string();
 	
 	while top < x/2 {
-		for _empty_space in 0..2     { print!(" "); }
+		for _empty_space in 0..2     { print!("{}", " ".on_blue()); }
 		top += 1
 	}
-	if x%2 == 1 { print!(" ") }
-	println!("{}", " ".on_yellow());
+	if x%2 == 1 { print!("{}", " ".on_blue()) }
+	print!("{}", " ".on_green());
+	while top < x - 1 {
+		for _empty_right in 0..2 { print!("{}", " ".on_blue())}
+		top += 1
+	}
+	if x%2 == 1 { println!("{}", " ".on_blue())}
+	// println!();
 
 	while i <= x {
 		let mut line = "".to_string();
@@ -46,7 +52,7 @@ fn random_lights(range: u32, line: String) {
 	
 	for c in string.chars() {
 		if c == 'x' {
-			print!("{}", c.to_string().on_white())
+			print!("{}", c.to_string().on_bright_yellow())
 			// print!("{c}")
 		} else if c == 'u' {
 			print!("{}", c.to_string().on_red())
