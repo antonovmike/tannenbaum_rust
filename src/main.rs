@@ -46,17 +46,17 @@ fn random_lights(range: u32, index: u32, line: String) {
 	string.replace_range(index_1..index_1+1, "x");
 	string.replace_range(index_2..index_2+1, "u");
 	
-	// for c in string.chars() {
 	for (i, c) in string.chars().enumerate() {
 		if c == 'x' {
 			let left_side = (range - index) as usize;
-			let middle = left_side + index as usize;
+			let middle = left_side + (index * 2) as usize;
+
 			if i < left_side {
 				print!("{}", "Ж".on_blue().bright_white())
 			} else if i < middle {
 				print!("{}", "Ж".on_green().white())
 			} else {
-				print!("E")
+				print!("{}", "Ж".on_blue().bright_white())
 			}
 		} else if c == 'u' {
 			print!("{}", " ".on_red())
