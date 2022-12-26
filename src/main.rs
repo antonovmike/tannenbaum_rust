@@ -20,6 +20,7 @@ fn tannenbaum(x: u32) {
 		top += 1
 	}
 	if x%2 == 1                      { println!("{}", " ".on_blue()) }
+	if x%2 == 0                      { println!("{}", "  ".on_blue())}
 
 	while i <= x {
 		let mut line = "".to_string();
