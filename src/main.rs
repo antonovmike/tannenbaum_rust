@@ -28,7 +28,7 @@ fn tannenbaum(x: u32) {
 		for _middle      in i..i+1   { line.push('M') }
 		for _right_side  in 0..i     { line.push('R') }
 		for _enpty_right in i..x     { line.push('.') }
-		random_lights(x, line);
+		random_lights(x, i, line);
 		thread::sleep(Duration::from_millis(120));
 		i += 1
 	}
@@ -37,7 +37,7 @@ fn tannenbaum(x: u32) {
 	println!("{}", "   ".on_green());
 }
 
-fn random_lights(range: u32, line: String) {
+fn random_lights(range: u32, index: u32, line: String) {
 	let mut rng = rand::thread_rng();
 	let index_1: usize = rng.gen_range(0..(range * 2) as usize);
 	let index_2: usize = rng.gen_range(0..(range * 2) as usize);
@@ -47,8 +47,11 @@ fn random_lights(range: u32, line: String) {
 	string.replace_range(index_2..index_2+1, "u");
 	
 	for c in string.chars() {
+	// for (i, c) in string.chars().enumerate() {
 		if c == 'x' {
-			print!("{}", " ".on_bright_yellow())
+			// if i < (range - index) as usize {
+				print!("{}", "Ж".on_blue().bright_white())
+			// }
 		} else if c == 'u' {
 			print!("{}", " ".on_red())
 		} else if c == '.' {
