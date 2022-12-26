@@ -33,8 +33,10 @@ fn tannenbaum(x: u32) {
 		i += 1
 	}
 	
-	for _stem in 0..(x-1)            { print!(" ") }
-	println!("{}", "   ".on_green());
+	for _stem in 0..(x-1)            { print!("{}", " ".on_blue()) }
+	print!("{}", "   ".on_green());
+	for _stem in 0..(x-1)            { print!("{}", " ".on_blue()) }
+	println!();
 }
 
 fn random_lights(range: u32, index: u32, line: String) {
