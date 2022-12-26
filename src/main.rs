@@ -60,12 +60,12 @@ fn random_lights(range: u32, index: u32, line: String) {
 				print!("{}", "Ж".on_blue().bright_white())
 			}
 		} else if c == 'u' {
-			if i < left_side {
-				print!("{}", " ".on_yellow())
+			if i < left_side + 1 {
+				print!("{}", "П".on_yellow())
 			} else if i < middle {
-				print!("{}", " ".on_red())
+				print!("{}", "O".on_red())
 			} else {
-				print!("{}", " ".on_yellow())
+				print!("{}", "А".on_yellow())
 			}
 		} else if c == '.' {
 			print!("{}", " ".on_blue())
