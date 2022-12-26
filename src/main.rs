@@ -1,17 +1,19 @@
 use std::thread;
 use std::time::Duration;
 
-fn main() { tannenbaum(7); }
+fn main() { tannenbaum(23) }
 
 fn tannenbaum(x: i32) {
 	let mut top = 0;
 	let mut i = 1;
 
 	while top < x/2 {
-		for _empty_space in 0..2     { print!(" "); }
+		for _empty_space in 0..2     { print!(" ") }
 		top += 1
 	}
-	if x%2 == 1 { print!(" ") }
+
+	if x%2 == 1                      { print!(" ") }
+	
 	println!("A");
 
 	while i <= x {
@@ -24,6 +26,7 @@ fn tannenbaum(x: i32) {
 		i += 1
 	}
 	
-	for _stem in 0..(x-1) { print!(" "); }
+	for _stem in 0..(x-1) 			 { print!(" ") }
+
 	println!("ШШШ");
 }
