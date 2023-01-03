@@ -16,7 +16,7 @@ fn tannenbaum(x: u32) {
 	if x%2 == 1                      { print!("{}", " ".on_blue())   }
 	print!("{}", " ".on_green());
 	while top < x - 1 {
-		for _empty_right in 0..2     { print!("{}", " ".on_blue())   }
+		for _empty_right in 0..2  { print!("{}", " ".on_blue())   }
 		top += 1
 	}
 	if x%2 == 1                      { println!("{}", " ".on_blue()) }
